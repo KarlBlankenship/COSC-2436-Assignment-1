@@ -6,6 +6,9 @@
 package blankenship.assignment.review.employeemanagement;
 
 import blankenship.assignment.review.domain.Employee;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
         
 
@@ -27,9 +30,24 @@ public class EmployeePortfolios {
         List<Employee> employees = new ArrayList();
     
         // Start writing required commands....
-        //ef.loadEmployeePortfolios("text file");
+        //List = ef.loadEmployeePortfolios("text file");
         //ef.display(ef.sortByEmployeeName(List));
         //ef.display(ef.sortByManagerName(List));
     }
     
+    private List<Employee> loadEmployeePortfolios(String filename) throws FileNotFoundException {
+        
+        // Create List to hold Employee objects.
+        List<Employee> employeeList = new ArrayList();
+        
+        // Create String variable to hold input filename.
+        String fileName = filename;
+        
+        // Create FileReader object and pass in file.
+        FileReader fr = new FileReader(fileName);
+        // Read file into a buffer.
+        BufferedReader br = new BufferedReader(fr);
+        
+        return employeeList;
+    }
 }
