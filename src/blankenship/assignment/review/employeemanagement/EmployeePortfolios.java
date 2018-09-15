@@ -26,6 +26,10 @@ public class EmployeePortfolios {
         // Create an employee list variable.
         List<Employee> employees = new ArrayList();
     
+        // Start writing required commands....
+        //ef.loadEmployeePortfolios("text file");
+        //ef.display(ef.sortByEmployeeName(List));
+        //ef.display(ef.sortByManagerName(List));
     }
     
 }
