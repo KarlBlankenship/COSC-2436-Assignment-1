@@ -37,9 +37,10 @@ public class EmployeePortfolios {
         
         
         // Start writing required commands....
-        // employeeData.txt is stored in main project file.
+        // employeeData.txt is stored in main project file so that it can
+        // be accessed without a specific file path.
         employees = ef.loadEmployeePortfolios("employeeData.txt");
-        //ef.display(employees);
+        ef.display(employees);
         //ef.display(ef.sortByEmployeeName(List));
         //ef.display(ef.sortByManagerName(List));
     }
@@ -78,12 +79,11 @@ public class EmployeePortfolios {
         return employeeList;
     }
     
-    /*
-    private void display(List<Employee> inputList) {
+        private void display(List<Employee> inputList) {
         System.out.println("display"); /////// Not working!!!
         for (Employee employee : inputList) {
             System.out.println(employee.getName()+ " "+ employee.getManager());
         }
     }
-    */
+    
 }
