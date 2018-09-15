@@ -5,6 +5,10 @@
  */
 package blankenship.assignment.review.employeemanagement;
 
+import blankenship.assignment.review.domain.Employee;
+import java.util.*;
+        
+
 /**
  *
  * @author Karl
@@ -15,7 +19,13 @@ public class EmployeePortfolios {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Create an EmployeePortfolios object.
+        EmployeePortfolios ef = new EmployeePortfolios();
+        
+        // Create an employee list variable.
+        List<Employee> employees = new ArrayList();
+    
     }
     
 }
