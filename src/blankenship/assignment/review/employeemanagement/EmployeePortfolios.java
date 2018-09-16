@@ -7,13 +7,8 @@ package blankenship.assignment.review.employeemanagement;
 
 import blankenship.assignment.review.domain.Employee;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
-import javax.swing.JOptionPane;
         
 
 /**
@@ -34,15 +29,13 @@ public class EmployeePortfolios {
         // Create an employee list variable.
         List<Employee> employees = new ArrayList();
     
-        
-        
         // Start writing required commands....
         // employeeData.txt is stored in main project file so that it can
         // be accessed without a specific file path.
         employees = ef.loadEmployeePortfolios("employeeData.txt");
         ef.display(employees);
-        //ef.display(ef.sortByEmployeeName(List));
-        //ef.display(ef.sortByManagerName(List));
+        ef.display(ef.sortByEmployeeName(employees));
+        ef.display(ef.sortByManagerName(employees));
     }
     
     private List<Employee> loadEmployeePortfolios(String filename) 
@@ -74,16 +67,47 @@ public class EmployeePortfolios {
             line = br.readLine();
         }
        
-        System.out.println(employeeList.get(0).getName()); //// not working!!
+        System.out.println(employeeList.get(0).getName()); 
         
         return employeeList;
     }
     
-        private void display(List<Employee> inputList) {
-        System.out.println("display"); /////// Not working!!!
+    private void display(List<Employee> inputList) {
+        System.out.println("display"); 
         for (Employee employee : inputList) {
             System.out.println(employee.getName()+ " "+ employee.getManager());
         }
     }
     
+    private List<Employee> sortByEmployeeName(List<Employee> inputEmployee) {
+        Collections.sort(inputEmployee, new NameComparator());
+        return inputEmployee;
+    }
+    
+    private List<Employee> sortByManagerName(List<Employee> inputEmployee) {
+        Collections.sort(inputEmployee, new ManagerComparator());
+        return inputEmployee;
+    }
+
+
+
+    private class NameComparator implements Comparator<Employee> {
+
+        @Override
+        public int compare(Employee e1, Employee e2) {
+            String name1 = e1.getName();
+            String name2 = e2.getName();
+            return name1.compareTo(name2);
+        }
+    }
+
+    private class ManagerComparator implements Comparator<Employee> {
+
+        @Override
+        public int compare(Employee e1, Employee e2) {
+            String name1 = e1.getManager();
+            String name2 = e2.getManager();
+            return name1.compareTo(name2);
+        }
+    }
 }
