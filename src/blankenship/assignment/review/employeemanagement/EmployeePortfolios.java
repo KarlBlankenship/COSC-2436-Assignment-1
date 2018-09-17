@@ -98,25 +98,50 @@ public class EmployeePortfolios {
         return employeeList; // Return employee list.
     }
     
+    /**
+     * display Method will accept a list of employees and display the list to
+     * the terminal.
+     * @param inputList 
+     */
     private void display(List<Employee> inputList) {
-        System.out.println("display"); 
-        for (Employee employee : inputList) {
-            System.out.println(employee.getName()+ " "+ employee.getManager());
+        
+        // Print output header.
+        System.out.println("Employee\t" + "Manager");
+        // Call each object in the employee list and print fields.
+        for (Employee employee : inputList) {    
+            System.out.println(employee.getName() + "\t\t" +
+                    employee.getManager());
         }
     }
     
+    /**
+     * sortByEmployeeName Method will accept a List of Employee objects and 
+     * return the list sorted alphabetically by employee name utilizing the
+     * NameComparator Class as defined below.
+     * @param inputEmployee
+     * @return 
+     */
     private List<Employee> sortByEmployeeName(List<Employee> inputEmployee) {
         Collections.sort(inputEmployee, new NameComparator());
         return inputEmployee;
     }
     
+    /**
+     * sortByManagerName Method will accept a List of Employee objects and 
+     * return the list sorted alphabetically by employees manager utilizing
+     * the ManagerComparator Class as defined below.
+     * @param inputEmployee
+     * @return 
+     */
     private List<Employee> sortByManagerName(List<Employee> inputEmployee) {
         Collections.sort(inputEmployee, new ManagerComparator());
         return inputEmployee;
     }
 
-
-
+    /**
+     * Name Comparator class implements the Comparator class for Employee
+     * objects and contains an override method to compare objects.
+     */
     private class NameComparator implements Comparator<Employee> {
 
         @Override
@@ -127,6 +152,10 @@ public class EmployeePortfolios {
         }
     }
 
+    /**
+     * Name Comparator class implements the Comparator class for Employee
+     * objects and contains an override method to compare objects.
+     */
     private class ManagerComparator implements Comparator<Employee> {
 
         @Override
