@@ -1,20 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * COSC 2436 Programming Fundamentals III with Java
+ * Java Recap Assignment 1
+ * Create an Employee Class containing employee name and manager name.
  */
+
 package blankenship.assignment.review.domain;
 
 /**
  * Employee class which will be used for holding the employee name and
  * the employee manager name.
- * @author Karl
+ * @author Karl Blankenship
  */
 public class Employee {
     
-    /*
-    Create private variables to hold employee name and employee manager.
-    */
+    // Create private variables to hold employee name and employee manager.
     private String name;
     private String manager;
     
@@ -64,6 +63,5 @@ public class Employee {
      */
     public void setManager(String manager) {
         this.manager = manager;
-    }
-         
+    }        
 }
